@@ -2,7 +2,7 @@
 //learn readline rl.question
 
 exports.guessingGame = function() {
-  let randomNumber =  Math.floor(Math.random() * 10 + 1)
+  let randomNumber =  Math.floor(Math.random() * 100 + 1)
   let correctGuess = false
 
   console.log(randomNumber)
