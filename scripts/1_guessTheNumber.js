@@ -7,21 +7,23 @@ exports.guessingGame = function() {
 
   console.log(randomNumber)
 
-  while (!correctGuess) {
-    let guess = prompt('What is your guess?')
+    while (!correctGuess) {
+      checkGuess( prompt( 'What is your guess?' ))
+    }
+}
 
-    if (guess > randomNumber) {
-      console.log('you guessed too high')
-    }
-    if (guess < randomNumber) {
-      console.log('you guessed too low');
-    }
-    if (guess == randomNumber) {
-      correctGuess = true
-      console.log('you guessed correctly')
-    }
-    if (guess === 'exit') {
-      break
-    }
+function checkGuess( guess ) {
+  if (guess > randomNumber) {
+  return('you guessed too high')
+  }
+  if (guess < randomNumber) {
+  return('you guessed too low');
+  }
+  if (guess == randomNumber) {
+    correctGuess = true
+  return('you guessed correctly')
+  }
+  if (guess === 'exit') {
+    return('exit')
   }
 }

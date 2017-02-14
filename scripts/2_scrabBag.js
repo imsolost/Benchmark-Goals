@@ -32,6 +32,31 @@ exports.remainingTiles = function(string) {
   return reversedWeededAndJoinedArray( createTilesArray( reduceTiles(tiles, splitString) ) )
 }
 
+const FREQUENCIES = {}
+
+const findFrequencies = input => {
+  const frequencies = Object.assign( {}, FREQUENCIES )
+
+  input.split( '' ).forEach( letter => {
+    frequencies[ letter ]--
+  })
+
+  return frequencies
+}
+
+{ a: 1, b: 2, c: 1 }
+const frequencyDistribution = frequencies => {
+  return frequencies.reduce( (memo, letterObject) => {
+    const letter = Object.keys( letterObject )[ 0 ]
+    const frequency = letterObject[ letter ]
+
+    memo[ frequency ] = memo[ frequency ] || []
+    memo[ frequency ].push( letter )
+
+    return memo
+  }, {} )
+}
+
 function reduceTiles(object, array) {
   for (var key in object) {
     for (var i = 0; i < array.length; i++) {
