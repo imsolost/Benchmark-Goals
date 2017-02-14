@@ -1,7 +1,7 @@
 var expect    = require("chai").expect;
 var whoWantsADate = require("../scripts/7_whoWantsADate");
 var fs = require("fs");
-var text = fs.readFileSync("/Users/ryankent/Desktop/LG/Benchmark-Goals/app/dates.txt").toString('utf-8');
+var text = fs.readFileSync( "./app/dates.txt").toString('utf-8');
 var textByLine = text.split("\n")
 
 describe("date fix test", function() {
